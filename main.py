@@ -306,6 +306,11 @@ def determine_matrix():
         text.insert(2.0, "\nвырожденная")
     else:
         text.insert(2.0, "\nневырожденная")
+    try:
+        text.insert(3.0, f"\ninv={np.linalg.inv(matrix1)}")
+    except:
+        text.insert(3.0, "\nSingular matrix")
+    text.insert(4.0, f"\nTranspose={matrix1.T}")
     text.pack()
 
 
